@@ -3,6 +3,7 @@ data_list = []
 def getBmi():
   i = 0
   print('No. {:<8} BMI {:>10}'.format('Sex', 'Category'))
+
   for sex, h, w in data_list:
     i+=1
     h = float(h)
@@ -33,6 +34,7 @@ def getData():
     des2 = 'Incorrect data!\n'
     print(des2)
     getData()
+  return main()
 
 def main():
   if not data_list:
