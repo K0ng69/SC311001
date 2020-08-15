@@ -16,9 +16,4 @@ def SId():
     print(f'{U} is odd number')
 
 if __name__ == "__main__":
-  i = 1
-  sex =  'male'
-  bmi = 21.15
-  category =  'Overweight'
-  print('No. {:<8} BMI {:>10}'.format('Sex', 'Category'))
-  print(f'{i:02d}. {sex:<8} {bmi:.2f} {category}')
+  SquareArea()
