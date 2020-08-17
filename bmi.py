@@ -1,6 +1,10 @@
+import statistics
+
 data_list = []
 
 def getBmi():
+  maleBmi = []
+  femaleBmi = []
   i = 0
   print('No. {:<8} BMI {:>10}'.format('Sex', 'Category'))
 
@@ -20,8 +24,20 @@ def getBmi():
     else:
       category = 'Obesity'
 
+    if sex == 'm':
+      maleBmi.append(bmi)
+    else:
+      femaleBmi.append(bmi)
     sex = 'male' if sex == 'm' else 'female'
     print(f'{i:02d}. {sex:<8} {bmi:.2f} {category}')
+
+  averageMale = statistics.mean(maleBmi)
+  averageFemale = statistics.mean(femaleBmi)
+  averageAll = statistics.mean(maleBmi+femaleBmi)
+
+  print(f'\nAverage Bmi of Male is {averageMale:.2f}')
+  print(f'Average Bmi of Female is {averageFemale:.2f}')
+  print(f'Average Bmi {averageAll:.2f}')
 
 def getData():
   des1 = 'Enter Sex, Height, Weight (Ex: m 176 52)\n(m = male, f = female)\n'
